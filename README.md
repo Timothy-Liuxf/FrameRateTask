@@ -4,8 +4,12 @@
 
 ## Introduction
 
+This project is initially written for [THUAI4](https://github.com/eesast/THUAI4) to support some functions.
+
 This project intends to build an engine to support to execute tasks which need to be execute repeatedly and frequently, and the time interval between two executing need to be accurately stable. And this engine can also provide the real-time frame rate. Up to now, this time interval should be no more than 1 second. It can be used to control the framerate of a game, and control the frame rate of communication through network, etc. 
 
+>  本项目的编写最初是为了 [THUAI4](https://github.com/eesast/THUAI4) 来实现某些特定功能。  
+>
 >  本项目旨在构建一个可以重复、高频率执行一个任务的引擎，并且每两次执行的时间间隔有精确和稳定和需求。并且，本引擎还可以提供实时的帧率。目前本引擎仅支持的两次执行的时间间隔小于一秒钟。本引擎可以用来控制游戏帧数、网络通信帧率，等等。  
 
 
