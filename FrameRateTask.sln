@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameRateTask", "FrameRateTask\FrameRateTask.csproj", "{360BE59A-3920-4C82-BBFB-97C12E7A7B4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{C43140D8-1798-48C4-BDFF-24F1B7C882B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{360BE59A-3920-4C82-BBFB-97C12E7A7B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360BE59A-3920-4C82-BBFB-97C12E7A7B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360BE59A-3920-4C82-BBFB-97C12E7A7B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360BE59A-3920-4C82-BBFB-97C12E7A7B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43140D8-1798-48C4-BDFF-24F1B7C882B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43140D8-1798-48C4-BDFF-24F1B7C882B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43140D8-1798-48C4-BDFF-24F1B7C882B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43140D8-1798-48C4-BDFF-24F1B7C882B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19AB3133-5CDE-47FD-94A8-16088C24D599}
+	EndGlobalSection
+EndGlobal
