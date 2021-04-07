@@ -91,7 +91,7 @@ Please check LICENSE.txt
 
   > It will be called when time exceeds. Details are under `MaxTolerantTimeExceedCount`.
   >
-  > 将在超时厚被调用。详情参见 `MaxTolerantTimeExceedCount`。
+  > 将在超时后被调用。详情参见 `MaxTolerantTimeExceedCount`。
 
 + `public long BeginTickCount { get; }`
 
@@ -109,5 +109,9 @@ Please check LICENSE.txt
 
   > The maximum number of time exceeding in a series. `5` for default. Once time exceeds, if the number of time exceeding in a series is no more than `MaxTolerantTimeExceedCount`, `TimeExceedAction` will be called with argument `false`, otherwise, if `AllowTimeExceed` is set `true`, `TimeExceedAction` will be called with argument `true`, otherwise (`AllowTimeExceed` is set `false`), it will throw an exception.
   >
+  > Once more than `MaxTolerantTimeExceedCount`, it will automatically abandon unfinished loops, and reset the loop counter. There is an example about this in the project Test, that is, `Demo5` method.
+  >
   > 允许连续超时的最大次数。默认为 `5`。一旦某次循环执行超时，如果连续超时次数不超过 `MaxTolerantTimeExceedCount`，`TimeExceedAction` 会被调用，且参数为 `false`；否则，如果 `AllowTimeExceed` 为 `true`，`TimeExceedAction` 会被调用，且参数为 `true`；如果 `AllowTimeExceed` 为 `false`，将会抛出异常。
+  >
+  > 一旦连续超时的次数大于 `MaxTolerantTimeExceedCount`，未完成的循环将会被舍弃，并重新进行循环计数。在 Test 项目中有一个关于本条的例子，即 `Demo5` 方法。
 
