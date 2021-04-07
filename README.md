@@ -16,7 +16,7 @@ This project intends to build an engine to support to execute tasks which need t
 
 ## Author
 
-Autor: Timothy Liu
+Autor: Timothy-LiuXuefeng
 
 Job: Student at THU, major in EE
 
