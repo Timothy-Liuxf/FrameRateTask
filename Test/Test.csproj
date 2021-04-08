@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FrameRateTask\FrameRateTask.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="FrameRateTask">
       <HintPath>FrameRateTask.dll</HintPath>
     </Reference>
