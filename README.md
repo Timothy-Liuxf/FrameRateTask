@@ -36,9 +36,11 @@ Please check LICENSE.txt
 
 
 
-## Interfaces: 
+## Interfaces  
 
-### `class FrameRateTaskExecutor<TResult>`:
+### CSharp  
+
+#### `class FrameRateTaskExecutor<TResult>`
 
 `TResult`: The return value of the task.
 
