@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <PackageLicenseFile>../../LICENSE.txt</PackageLicenseFile>
     <FileVersion>1.0.0.0</FileVersion>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <RepositoryUrl>https://github.com/Timothy-LiuXuefeng/FrameRateTask</RepositoryUrl>
@@ -11,8 +12,6 @@
     <Copyright>Copyright (C) 2022</Copyright>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/Timothy-LiuXuefeng/FrameRateTask</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,10 +27,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-	<None Include="..\..\LICENSE.txt">
-		<Pack>True</Pack>
-		<PackagePath>\</PackagePath>
-	</None>
   </ItemGroup>
 
 </Project>
