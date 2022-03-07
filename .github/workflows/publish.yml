@@ -20,4 +20,4 @@ jobs:
     - name: Pack package
       run: dotnet pack "./CSharp/FrameRateTask/FrameRateTask.csproj" -c Release
     - name: Push nuget package
-      run: dotnet nuget push "./CSharp/FrameRateTask/bin/Release/*.nupkg"  --api-key ${{ secrets.PUBLISH_NUGET_GITHUB_PAT }} --source "github"
+      run: dotnet nuget push "./CSharp/FrameRateTask/bin/Release/*.nupkg"  --api-key ${{ secrets.NUGET_KEY }} --source "https://api.nuget.org/v3/index.json"
