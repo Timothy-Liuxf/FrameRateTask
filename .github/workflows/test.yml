@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+
+jobs:
+  test:
+    runs-on: ubuntu-lastest
+    steps:
+    - name: Fetch code
+      uses: actions/checkout@v3
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: | 
+          3.1.x
+          5.0.x
+          6.0.x
+    - name: Build FrameRateTask
+      run: dotnet build "./CSharp/FrameRateTask/FrameRateTask.csproj" -c Release
+    - name: Run test code
+      run: dotnet build "./CSharp/Test/Test.csproj" -c Release
