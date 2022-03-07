@@ -1,0 +1,21 @@
+name: publish
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  publish_nuget_package:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fetch code
+      uses: actions/checkout@v3
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: | 
+          3.1.x
+          5.0.x
+          6.0.x
+    - name: Push nuget package
+      run: dotnet nuget push "./CSharp/FrameRateTask/bin/Release/*.nupkg"  --api-key ${{ secrets.PUBLISH_NUGET_GITHUB_PAT }} --source "https://github.com/Timothy-LiuXuefeng/FrameRateTask"
