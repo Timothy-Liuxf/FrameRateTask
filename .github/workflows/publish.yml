@@ -17,5 +17,7 @@ jobs:
           3.1.x
           5.0.x
           6.0.x
+    - name: Pack package
+      run: dotnet pack "./CSharp/FrameRateTask/FrameRateTask.csproj" -c Release
     - name: Push nuget package
       run: dotnet nuget push "./CSharp/FrameRateTask/bin/Release/*.nupkg"  --api-key ${{ secrets.PUBLISH_NUGET_GITHUB_PAT }} --source "https://github.com/Timothy-LiuXuefeng/FrameRateTask"
