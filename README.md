@@ -1,4 +1,4 @@
-# README
+# FrameRateTask
 
 ---
 
@@ -18,21 +18,31 @@ The source code of the dll is in the project FrameRateTask, and the example of u
 
 
 
+## Get This Package
+
+To get this package, please enter nuget package page: [https://www.nuget.org/packages/FrameRateTask/](https://www.nuget.org/packages/FrameRateTask/)
+
+or use .NET CLI:  
+
+```shell
+$ dotnet add package FrameRateTask
+```
+
+
+
 ## Author
 
 Autor: Timothy-LiuXuefeng
 
-Job: Student at THU, major in EE
+Job: Undergraduate in THU, major in EE
 
-Copyright (C) 2021 Timothy Liu
+Copyright (C) 2022 Timothy-LiuXuefeng
 
 
 
 ## LICENSE
 
-MIT license
-
-Please check LICENSE.txt
+[MIT license](./LICENSE.txt)
 
 
 
