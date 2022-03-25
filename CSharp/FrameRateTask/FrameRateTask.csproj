@@ -4,6 +4,7 @@
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <FileVersion>1.1.0.0</FileVersion>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <VersionPrefix>1.1.0</VersionPrefix>
     <RepositoryUrl>https://github.com/Timothy-LiuXuefeng/FrameRateTask</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>TimothyLiuXuefeng</Authors>
@@ -22,6 +23,14 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>.\FrameRateTask.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
