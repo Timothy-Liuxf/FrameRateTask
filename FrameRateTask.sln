@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64E26841-2083-4D77-9238-20D5C3A1F993}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "CSharp\Test\Test.cs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{C0855812-2EBC-415D-92D3-C3B100DB3203}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConcurrency", "CSharp\TestConcurrency\TestConcurrency.csproj", "{BD4BCC77-7900-46A2-A213-D4E3F611E53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3B3B042E-7E86-4A93-B97F-FDF3A44D3722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B3B042E-7E86-4A93-B97F-FDF3A44D3722}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B3B042E-7E86-4A93-B97F-FDF3A44D3722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4BCC77-7900-46A2-A213-D4E3F611E53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4BCC77-7900-46A2-A213-D4E3F611E53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4BCC77-7900-46A2-A213-D4E3F611E53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4BCC77-7900-46A2-A213-D4E3F611E53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{07261E94-73FD-43C5-AAAA-8C61E7576E47} = {C0855812-2EBC-415D-92D3-C3B100DB3203}
 		{3B3B042E-7E86-4A93-B97F-FDF3A44D3722} = {C0855812-2EBC-415D-92D3-C3B100DB3203}
+		{BD4BCC77-7900-46A2-A213-D4E3F611E53E} = {C0855812-2EBC-415D-92D3-C3B100DB3203}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19AB3133-5CDE-47FD-94A8-16088C24D599}

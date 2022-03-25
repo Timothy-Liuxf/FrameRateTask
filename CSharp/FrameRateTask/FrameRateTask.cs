@@ -13,6 +13,7 @@ using System.Threading;
 
 namespace Timothy.FrameRateTask
 {
+
 	/// <summary>
 	/// The class intends to execute a task that need to be executed repeatedly every less than one second and need to be accurate.
 	/// </summary>
@@ -22,7 +23,12 @@ namespace Timothy.FrameRateTask
 		/// <summary>
 		/// The actual framerate recently.
 		/// </summary>
-		public uint FrameRate { get; private set; }
+		public uint FrameRate
+		{
+			get => (uint)Interlocked.CompareExchange(ref frameRate, 0, 0);
+			private set => Interlocked.Exchange(ref frameRate, value);
+		}
+		private long frameRate;
 
 		/// <summary>
 		/// Gets a value indicating whether or not the task has finished.
@@ -30,7 +36,12 @@ namespace Timothy.FrameRateTask
 		/// <returns>
 		/// true if the task has finished; otherwise, false.
 		/// </returns>
-		public bool Finished { get; private set; } = false;
+		public bool Finished
+		{
+			get => Interlocked.CompareExchange(ref finished, 0, 0) != 0;
+			set => Interlocked.Exchange(ref finished, value ? 1 : 0);
+		}
+		private int finished = 0;
 
 		/// <summary>
 		/// Gets a value indicating whether or not the task has started.
@@ -38,16 +49,15 @@ namespace Timothy.FrameRateTask
 		/// <returns>
 		/// true if the task has started; otherwise, false.
 		/// </returns>
-		public bool HasExecuted { get; private set; } = false;
-		private object hasExecutedLock = new object();
+		public bool HasExecuted { get => Interlocked.CompareExchange(ref hasExecuted, 0, 0) != 0; }
+		private int hasExecuted = 0;
 		private bool TrySetExecute()
 		{
-			lock (hasExecutedLock)
+			if (Interlocked.Exchange(ref hasExecuted, 1) != 0)
 			{
-				if (HasExecuted) return false;
-				HasExecuted = true;
-				return true;
+				return false;
 			}
+			return true;
 		}
 
 		private TResult result;
@@ -67,7 +77,6 @@ namespace Timothy.FrameRateTask
 			private set => result = value;
 		}
 
-
 		/// <summary>
 		/// Gets or sets whether it allows time exceeding.
 		/// </summary>
@@ -75,7 +84,15 @@ namespace Timothy.FrameRateTask
 		/// If this property is false, the task will throw a TimeExceed exception when the task cannot finish in the given time.
 		/// The default value is true.
 		/// </remarks>
-		public bool AllowTimeExceed { get; set; } = true;
+		public bool AllowTimeExceed
+		{
+			get;
+#if NET5_0_OR_GREATER
+            init;
+#else
+			set;
+#endif
+		} = true;
 
 		/// <summary>
 		/// It will be called once time exceeds if AllowTimeExceed is set true.
@@ -83,17 +100,15 @@ namespace Timothy.FrameRateTask
 		/// <remarks>
 		/// parameter bool: If it is called because of the number of time exceeding is greater than MaxTimeExceedCount, the argument is true; if it is called because of exceeding once, the argument is false.
 		/// </remarks>
-		public Action<bool> TimeExceedAction { get; set; } = callByExceed => { };
-
-		/// <summary>
-		/// The TickCount when beginning the loop,
-		/// </summary>
-		public long BeginTickCount { get; private set; } = 0L;
-
-		/// <summary>
-		/// The TickCount should be when ending last loop.
-		/// </summary>
-		public long LastLoopEndingTickCount { get; private set; }
+		public Action<bool> TimeExceedAction
+		{
+			get;
+#if NET5_0_OR_GREATER
+            init;
+#else
+			set;
+#endif
+		} = callByExceed => { };
 
 		/// <summary>
 		/// Gets or sets the maximum count of time exceeding continuously.
@@ -101,7 +116,15 @@ namespace Timothy.FrameRateTask
 		/// <remarks>
 		/// The value is 5 for default.
 		/// </remarks>
-		public ulong MaxTolerantTimeExceedCount { get; set; } = 5;
+		public ulong MaxTolerantTimeExceedCount
+		{
+			get;
+#if NET5_0_OR_GREATER
+            init;
+#else
+			set;
+#endif
+		} = 5;
 
 		/// <summary>
 		/// Start this task synchronously.
@@ -155,12 +178,13 @@ namespace Timothy.FrameRateTask
 			loopFunc = () =>
 			{
 				ulong timeExceedCount = 0UL;
+				long lastLoopEndingTickCount, beginTickCount;
 
-				var nextTime = (LastLoopEndingTickCount = BeginTickCount = Environment.TickCount64) + timeInterval;
-				var endTime = BeginTickCount < long.MaxValue - maxTotalDuration ? BeginTickCount + maxTotalDuration : long.MaxValue;
+				var nextTime = (lastLoopEndingTickCount = beginTickCount = Environment.TickCount64) + timeInterval;
+				var endTime = beginTickCount < long.MaxValue - maxTotalDuration ? beginTickCount + maxTotalDuration : long.MaxValue;
 
 				uint loopCnt = 0;
-				var nextCntTime = BeginTickCount + 1000L;
+				var nextCntTime = beginTickCount + 1000L;
 
 				while (loopCondition() && nextTime <= endTime)
 				{
@@ -191,7 +215,7 @@ namespace Timothy.FrameRateTask
 						else if (AllowTimeExceed) TimeExceedAction(false);
 					}
 
-					LastLoopEndingTickCount = nextTime;
+					lastLoopEndingTickCount = nextTime;
 					nextTime += timeInterval;
 					++loopCnt;
 					if (Environment.TickCount64 >= nextCntTime)
@@ -203,9 +227,9 @@ namespace Timothy.FrameRateTask
 				}
 
 				result = finallyReturn();
+				Interlocked.MemoryBarrierProcessWide();
 				Finished = true;
 			};
-
 		}
 
 		/// <summary>

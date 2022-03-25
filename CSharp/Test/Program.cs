@@ -11,7 +11,7 @@ namespace Test
 		{
 			Random r = new Random();
 			int cnt = 0;
-			FrameRateTaskExecutor<int> frt = new FrameRateTaskExecutor<int>
+			FrameRateTaskExecutor<int> executor = new FrameRateTaskExecutor<int>
 				(
 					() => true,
 					() =>
@@ -31,21 +31,21 @@ namespace Test
 				(
 					() =>
 					{
-						while (!frt.Finished)
+						while (!executor.Finished)
 						{
-							Console.WriteLine($"Now framerate: { frt.FrameRate }");
+							Console.WriteLine($"Now framerate: { executor.FrameRate }");
 							Thread.Sleep(1000);
 						}
 					}
 				);
-			frt.Start();
+			executor.Start();
 		}
 
 		static void Demo2()			// The most common circumstance.
 		{
 			int i = 1, sum = 0;
 			Random r = new Random();
-			FrameRateTaskExecutor<int> frt = new FrameRateTaskExecutor<int>
+			FrameRateTaskExecutor<int> executor = new FrameRateTaskExecutor<int>
 				(
 					() => i <= 10,
 					() =>
@@ -64,8 +64,8 @@ namespace Test
 			{
 				MaxTolerantTimeExceedCount = ulong.MaxValue			// Set it to ulong.MaxValue in case time exceeding could cause the result incorrect.
 			};
-			frt.Start();
-			Console.WriteLine($"result: {frt.Result}");
+			executor.Start();
+			Console.WriteLine($"result: {executor.Result}");
 		}
 		static void Demo3()
 		{
@@ -109,7 +109,7 @@ namespace Test
 		{
 			Random r = new Random();
 			int tm = 0;
-			FrameRateTaskExecutor<int> frt = new FrameRateTaskExecutor<int>
+			FrameRateTaskExecutor<int> executor = new FrameRateTaskExecutor<int>
 				(
 					() => true,
 					() => 
@@ -127,14 +127,14 @@ namespace Test
 				(
 					() =>
 					{
-						while (!frt.Finished)
+						while (!executor.Finished)
 						{
-							Console.WriteLine($"Now framerate: { frt.FrameRate }");
+							Console.WriteLine($"Now framerate: { executor.FrameRate }");
 							Thread.Sleep(1000);
 						}
 					}
 				);
-			frt.Start();
+			executor.Start();
 		}
 
 		static void Demo5()
@@ -143,7 +143,7 @@ namespace Test
 				Random r = new Random();
 				int tm = 0;
 				int cnt = 0;
-				FrameRateTaskExecutor<int> frt = new FrameRateTaskExecutor<int>
+				FrameRateTaskExecutor<int> executor = new FrameRateTaskExecutor<int>
 					(
 						() => true,
 						() =>
@@ -166,14 +166,14 @@ namespace Test
 					(
 						() =>
 						{
-							while (!frt.Finished)
+							while (!executor.Finished)
 							{
-								Console.WriteLine($"Now framerate: { frt.FrameRate }");
+								Console.WriteLine($"Now framerate: { executor.FrameRate }");
 								Thread.Sleep(1000);
 							}
 						}
 					);
-				frt.Start();
+				executor.Start();
 			}
 			Console.WriteLine("You can see it is stable after it becomes clear.");
 
@@ -185,7 +185,7 @@ namespace Test
 				Random r = new Random();
 				int tm = 0;
 				int cnt = 0;
-				FrameRateTaskExecutor<int> frt = new FrameRateTaskExecutor<int>
+				FrameRateTaskExecutor<int> executor = new FrameRateTaskExecutor<int>
 					(
 						() => true,
 						() =>
@@ -208,14 +208,14 @@ namespace Test
 					(
 						() =>
 						{
-							while (!frt.Finished)
+							while (!executor.Finished)
 							{
-								Console.WriteLine($"Now framerate: { frt.FrameRate }");
+								Console.WriteLine($"Now framerate: { executor.FrameRate }");
 								Thread.Sleep(1000);
 							}
 						}
 					);
-				frt.Start();
+				executor.Start();
 				Console.WriteLine("You can see it is NOT stable after it becomes clear.");
 			}
 		}
