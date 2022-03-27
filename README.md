@@ -4,17 +4,21 @@
 
 ## Introduction
 
-This project is initially written for [THUAI4](https://github.com/eesast/THUAI4) to support some functions.
+Frame rate stabilizer, a task executor which executes tasks at a stable frame rate.  
 
 This project intends to build an engine to support to execute tasks which need to be execute repeatedly and frequently, and the time interval between two executing need to be accurately stable. And this engine can also provide the real-time frame rate. Up to now, this time interval should be no more than 1 second. It can be used to control the framerate of a game, and control the frame rate of communication through network, etc. 
 
 The source code of the dll is in the project FrameRateTask, and the example of usage is in the project Test.
 
->  本项目的编写最初是为了 [THUAI4](https://github.com/eesast/THUAI4) 来实现某些特定功能。  
+This project is initially written for [THUAI4](https://github.com/eesast/THUAI4) to support some functions.
+
+>  帧率稳定器——以固定帧率执行任务。
 >
 >  本项目旨在构建一个可以重复、高频率执行一个任务的引擎，并且每两次执行的时间间隔有精确和稳定的需求。并且，本引擎还可以提供实时的帧率。目前本引擎仅支持的两次执行的时间间隔小于一秒钟。本引擎可以用来控制游戏帧数、网络通信帧率，等等。  
 >
 >  dll 的源代码在 FrameRateTask 项目中，使用示例代码在 Test 项目中。
+>
+>  本项目的编写最初是为了 [THUAI4](https://github.com/eesast/THUAI4) 来实现某些特定功能。  
 
 
 
@@ -68,7 +72,7 @@ Copyright (C) 2022 Timothy-LiuXuefeng
     > ```
     >
     > + `loopCondition`: The condition to judge if the loop will continue. 是否继续循环的判断条件。
-    > + `loopToDo`: The loop body. If it returns false, jump out the loop. 循环体。如果返回 `false`，跳出循环。
+    > + `loopToDo`: The loop body. If it returns false, jump out of the loop. 循环体。如果返回 `false`，跳出循环。
     > + `timeInterval`: Time interval between two executing in milliseconds. 两次循环体执行的时间间隔，单位是毫秒。
     > + `finallyReturn`: Specify the last thing to do and the return value. 指定最后要做的事情和返回值。
     > + The maximum time in total for this task in milliseconds, `long.MaxValue` for default. 整个任务执行的最长时间，单位是毫秒。
