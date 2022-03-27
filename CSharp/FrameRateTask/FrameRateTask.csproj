@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
-    <FileVersion>1.1.0.0</FileVersion>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <FileVersion>1.1.1.0</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <VersionPrefix>1.1.1</VersionPrefix>
     <RepositoryUrl>https://github.com/Timothy-LiuXuefeng/FrameRateTask</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>TimothyLiuXuefeng</Authors>
@@ -15,6 +15,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Timothy-LiuXuefeng/FrameRateTask</PackageProjectUrl>
     <Nullable>disable</Nullable>
+    <Description>Frame rate stabilizer, a task executor which executes tasks at a stable frame rate.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
