@@ -13,7 +13,7 @@ using System;
 namespace Timothy.FrameRateTask
 {
 	/// <summary>
-	/// This exception will be throwed when the task hasn't finished but is asked to get the return value.
+	/// This exception will be thrown when the task hasn't finished but is asked to get the return value.
 	/// </summary>
 	public class TaskNotFinishedException : Exception
 	{
@@ -22,7 +22,7 @@ namespace Timothy.FrameRateTask
 	}
 
 	/// <summary>
-	/// This exception will be throwed when the time interval specified is invalid.
+	/// This exception will be thrown when the time interval specified is invalid.
 	/// </summary>
 	public class IllegalTimeIntervalException : Exception
 	{
@@ -31,7 +31,7 @@ namespace Timothy.FrameRateTask
 	}
 
 	/// <summary>
-	/// This exception will be throwed when time exceeds but time exceeding is not allowed.
+	/// This exception will be thrown when time exceeds but time exceeding is not allowed.
 	/// </summary>
 	public class TimeExceedException : Exception
 	{
@@ -40,12 +40,12 @@ namespace Timothy.FrameRateTask
 	}
 
 	/// <summary>
-	/// This exception will be throwed when the task has been started but is asked to be started again.
+	/// This exception will be thrown when the task has started but is asked to execute again.
 	/// </summary>
 	public class TaskStartedMoreThanOnceException : Exception
 	{
 		///
-		public override string Message => "The task has been started more than once!";
+		public override string Message => "The task has started more than once!";
 	}
 
 }
