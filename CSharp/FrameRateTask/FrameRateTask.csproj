@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
-    <FileVersion>1.1.1.0</FileVersion>
-    <AssemblyVersion>1.1.1.0</AssemblyVersion>
-    <VersionPrefix>1.1.1</VersionPrefix>
+    <FileVersion>1.1.2.0</FileVersion>
+    <AssemblyVersion>1.1.2.0</AssemblyVersion>
+    <VersionPrefix>1.1.2</VersionPrefix>
     <RepositoryUrl>https://github.com/Timothy-Liuxf/FrameRateTask</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>Timothy Liu</Authors>
