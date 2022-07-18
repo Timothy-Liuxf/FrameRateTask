@@ -13,7 +13,7 @@ using System;
 namespace Timothy.FrameRateTask
 {
 	/// <summary>
-	/// This exception will be thrown when the task hasn't finished but is asked to get the return value.
+	/// This exception will be thrown when the user gets the return value without the task finished.
 	/// </summary>
 	public class TaskNotFinishedException : Exception
 	{
@@ -40,7 +40,7 @@ namespace Timothy.FrameRateTask
 	}
 
 	/// <summary>
-	/// This exception will be thrown when the task has started but is asked to execute again.
+	/// This exception will be thrown when the user trys to start a task which has started.
 	/// </summary>
 	public class TaskStartedMoreThanOnceException : Exception
 	{
