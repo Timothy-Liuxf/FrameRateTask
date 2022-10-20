@@ -23,6 +23,5 @@ jobs:
       run: dotnet build "./CSharp/FrameRateTask/FrameRateTask.csproj" -c Release
     - name: Run test code
       run: |
-        dotnet build "./CSharp/Test/Test.csproj" -c Release
         dotnet build "./CSharp/TestConcurrency/TestConcurrency.csproj" -c Release
         dotnet run --project "./CSharp/TestConcurrency/TestConcurrency.csproj" -c Release
