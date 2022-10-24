@@ -2,9 +2,11 @@
 
  * FrameRateTask
 
- * Copyright © 2022 Timothy-LiuXuefeng
+ * Copyright © 2022 Timothy Liu
 
  * MIT LICENSE
+
+ * https://timothy-liuxf.github.io/FrameRateTask/
 
  */
 

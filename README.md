@@ -37,7 +37,11 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
 [MIT license](./LICENSE.txt)
 
-## Interfaces  
+## Contributing to this repository
+
+Please read [CONTRIBUTING](./CONTRIBUTING.md) carefully before contributing to this repository.
+
+## Interfaces
 
 ### CSharp  
 
@@ -106,5 +110,5 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
   The maximum number of time exceeding in a series, `5` for default. Once time exceeds, if the number of time exceeding in a series is no more than `MaxTolerantTimeExceedCount`, `TimeExceedAction` will be called with argument `false`。Otherwise, if `AllowTimeExceed` is set `true`, `TimeExceedAction` will be called with argument `true`, otherwise, that is, `AllowTimeExceed` is set `false`, it will throw `Timothy.FrameRateTask.TimeExceedException`.
 
-  Once more than `MaxTolerantTimeExceedCount`, it will automatically abandon unfinished loops, and reset the loop counter. There is an example about this, which is the `Demo5` method in the project `Test`.
+  Once more than `MaxTolerantTimeExceedCount`, it will automatically abandon unfinished loops, and reset the loop counter. The example `TemporaryCongestion` is a sample code of this.
 

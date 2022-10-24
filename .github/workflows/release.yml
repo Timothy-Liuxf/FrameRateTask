@@ -2,7 +2,7 @@ name: publish
 
 on:
   push:
-    branches: [ publish ]
+    branches: [ release/** ]
 
 jobs:
   publish_nuget_package:
@@ -11,7 +11,7 @@ jobs:
     - name: Fetch code
       uses: actions/checkout@v3
     - name: Setup dotnet
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: | 
           3.1.x

@@ -32,6 +32,10 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
 [MIT license](https://github.com/Timothy-LiuXuefeng/FrameRateTask/blob/master/LICENSE.txt)
 
+## 向本仓库贡献代码
+
+在贡献代码前，请认真阅读 [CONTRIBUTING](./CONTRIBUTING.zh-CN.md)。
+
 ## 接口
 
 ### CSharp  
@@ -101,9 +105,6 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
   允许连续超时的最大次数，默认为 `5`。一旦某次循环执行超时，如果连续超时次数不超过 `MaxTolerantTimeExceedCount`，`TimeExceedAction` 会被调用，且参数为 `false`。否则，如果 `AllowTimeExceed` 为 `true`，`TimeExceedAction` 会被调用，且参数为 `true`；如果 `AllowTimeExceed` 为 `false`，将会抛出 `Timothy.FrameRateTask.TimeExceedException` 异常。
 
-  一旦连续超时的次数大于 `MaxTolerantTimeExceedCount`，未完成的循环将会被舍弃，并重新进行循环计数。在 Test 项目中的 `Demo5` 方法就是关于本条的样例。
-
-
-
+  一旦连续超时的次数大于 `MaxTolerantTimeExceedCount`，未完成的循环将会被舍弃，并重新进行循环计数。样例 `TemporaryCongestion `就是关于本条的样例代码。
 
 
