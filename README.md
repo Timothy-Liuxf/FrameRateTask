@@ -37,7 +37,11 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
 [MIT license](./LICENSE.txt)
 
-## Interfaces  
+## Contributing to this repository
+
+Please read [CONTRIBUTING](./CONTRIBUTING.md) carefully before contributing to this repository.
+
+## Interfaces
 
 ### CSharp  
 

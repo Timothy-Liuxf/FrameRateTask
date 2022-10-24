@@ -32,6 +32,10 @@ Copyright (C) 2022 Timothy-LiuXuefeng
 
 [MIT license](https://github.com/Timothy-LiuXuefeng/FrameRateTask/blob/master/LICENSE.txt)
 
+## 向本仓库贡献代码
+
+在贡献代码前，请认真阅读 [CONTRIBUTING](./CONTRIBUTING.zh-CN.md)。
+
 ## 接口
 
 ### CSharp  

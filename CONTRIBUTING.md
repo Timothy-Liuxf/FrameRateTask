@@ -2,7 +2,7 @@
 
 ## Branch
 
-You should contribute to dev branch if you want to contribute to this reposity.
+You should contribute to **`dev`** branch if you want to contribute to this repository.
 
 ## Commit Specification
 
