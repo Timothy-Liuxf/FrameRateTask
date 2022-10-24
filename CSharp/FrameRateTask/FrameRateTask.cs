@@ -104,6 +104,7 @@ namespace Timothy.FrameRateTask
         /// </remarks>
         public Action<bool> TimeExceedAction
         {
+            private get;
 #if NET5_0_OR_GREATER
             init;
 #else
