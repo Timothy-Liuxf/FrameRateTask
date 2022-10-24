@@ -102,7 +102,7 @@ Please read [CONTRIBUTING](./CONTRIBUTING.md) carefully before contributing to t
 
   Whether the engine allows time exceeding, `true` for default. See more details under `MaxTolerantTimeExceedCount`.
 
-+ `public Action<bool> TimeExceedAction { get; init; }`
++ `public Action<bool> TimeExceedAction { init; }`
 
   It will be called when time exceeds. See more details under `MaxTolerantTimeExceedCount`.
 

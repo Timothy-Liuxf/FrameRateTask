@@ -15,39 +15,39 @@ using System;
 namespace Timothy.FrameRateTask
 {
 	/// <summary>
-	/// This exception will be thrown when the user gets the return value without the task finished.
+	/// The exception that is thrown when the user gets the return value while the task has not yet finished.
 	/// </summary>
-	public class TaskNotFinishedException : Exception
+	public class TaskNotFinishedException : InvalidOperationException
 	{
 		///
-		public override string Message => "The task has not finished!";
+		public override string Message => "The task has not yet finished!";
 	}
 
 	/// <summary>
-	/// This exception will be thrown when the time interval specified is invalid.
+	/// The exception that is thrown when the specified time interval is invalid.
 	/// </summary>
-	public class IllegalTimeIntervalException : Exception
+	public class IllegalTimeIntervalException : ArgumentOutOfRangeException
 	{
 		///
-		public override string Message => "The time interval should be positive and no more than 1000ms!";
+		public override string Message => "The time interval should be a positive number and not exceed 1000ms!";
 	}
 
 	/// <summary>
-	/// This exception will be thrown when time exceeds but time exceeding is not allowed.
+	/// The exception that is thrown when the task times out.
 	/// </summary>
-	public class TimeExceedException : Exception
+	public class TimeExceedException : TimeoutException
 	{
 		///
-		public override string Message => "The loop runs too slow that it cannot finish the task in the given time!";
+		public override string Message => "The loop runs so slowly that it cannot complete the task in the given time!";
 	}
 
 	/// <summary>
-	/// This exception will be thrown when the user trys to start a task which has started.
+	/// The exception that is thrown when the user tries to start a task that has already been started.
 	/// </summary>
-	public class TaskStartedMoreThanOnceException : Exception
+	public class TaskStartedMoreThanOnceException : InvalidOperationException
 	{
 		///
-		public override string Message => "The task has started more than once!";
+		public override string Message => "The task has been started more than once!";
 	}
 
 }

@@ -17,13 +17,13 @@ namespace Timothy.FrameRateTask
 {
 
 	/// <summary>
-	/// The class intends to execute a task which needs to be executed repeatedly every less than one second accurately.
+	/// This class intends to perform a task that needs to be executed repeatedly at exact intervals.
 	/// </summary>
 	/// <typeparam name="TResult">The type of the return value of the task.</typeparam>
 	public class FrameRateTaskExecutor<TResult>
 	{
 		/// <summary>
-		/// The current actual frame rate.
+		/// Gets the current actual frame rate.
 		/// </summary>
 		public uint FrameRate
 		{
@@ -33,7 +33,7 @@ namespace Timothy.FrameRateTask
 		private long frameRate;
 
 		/// <summary>
-		/// Gets a value indicating whether or not the task has finished.
+		/// Gets whether the task has finished.
 		/// </summary>
 		/// <returns>
 		/// true if the task has finished; otherwise, false.
@@ -46,7 +46,7 @@ namespace Timothy.FrameRateTask
 		private int finished = 0;
 
 		/// <summary>
-		/// Gets a value indicating whether or not the task has started.
+		/// Gets whether the task has started
 		/// </summary>
 		/// <returns>
 		/// true if the task has started; otherwise, false.
@@ -64,10 +64,10 @@ namespace Timothy.FrameRateTask
 
 		private TResult result;
 		/// <summary>
-		/// Get the return value of the task.
+		/// Gets the return value of the task.
 		/// </summary>
 		/// <exception cref="TaskNotFinishedException">
-		///		The task hasn't finished.
+		/// This task has not yet finished.
 		/// </exception>
 		public TResult Result
 		{
@@ -80,10 +80,10 @@ namespace Timothy.FrameRateTask
 		}
 
 		/// <summary>
-		/// Gets or sets whether it allows time exceeding.
+		/// Gets or sets whether to allow timeout.
 		/// </summary>
 		/// <remarks>
-		/// If it is set false, the task will throw Timothy.FrameRateTask.TimeExceedException when the task cannot finish in the given time.
+		/// If it is set to false and the task fails to complete in the given time, the task will throw Timothy.FrameRateTask.TimeExceedException.
 		/// The default value is true.
 		/// </remarks>
 		public bool AllowTimeExceed
@@ -97,14 +97,13 @@ namespace Timothy.FrameRateTask
 		} = true;
 
 		/// <summary>
-		/// It will be called once time exceeds.
+		/// Sets the method to be called when the task execution times out.
 		/// </summary>
 		/// <remarks>
-		/// parameter bool: If it is called because of the number of time exceeding is greater than MaxTolerantTimeExceedCount, the argument is true; if it is called because of exceeding once, the argument is false.
+		/// Parameter bool: true if the timeout count is greater than MaxTolerantTimeExceedCount when called; otherwise, false.
 		/// </remarks>
 		public Action<bool> TimeExceedAction
 		{
-			get;
 #if NET5_0_OR_GREATER
             init;
 #else
@@ -113,10 +112,10 @@ namespace Timothy.FrameRateTask
 		} = callByExceed => { };
 
 		/// <summary>
-		/// Gets or sets the maximum count of time exceeding continuously.
+		/// Gets or sets the maximum number of consecutive timeouts.
 		/// </summary>
 		/// <remarks>
-		/// The value is 5 for default.
+		/// The default value is 5.
 		/// </remarks>
 		public ulong MaxTolerantTimeExceedCount
 		{
@@ -129,20 +128,20 @@ namespace Timothy.FrameRateTask
 		} = 5;
 
 		/// <summary>
-		/// Start this task synchronously.
+		/// Starts this task synchronously.
 		/// </summary>
 		/// <exception cref="TaskStartedMoreThanOnceException">
-		/// the task has started.
+		/// The task has already started.
 		/// </exception>
 		public void Start()
 		{
 			if (!TryStart()) throw new TaskStartedMoreThanOnceException();
 		}
 		/// <summary>
-		/// Try to start this task synchronously.
+		/// Tries to start this task synchronously.
 		/// </summary>
 		/// <returns>
-		/// true if the task starts successfully; false if the task has started.
+		/// true if the task is started successfully; false if it has been started.
 		/// </returns>
 		public bool TryStart()
 		{
@@ -156,11 +155,11 @@ namespace Timothy.FrameRateTask
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="loopCondition">If you want to continue to loop, return true; otherwise, return false.</param>
-		/// <param name="loopToDo">If you want to break out, return false; otherwise, return true.</param>
-		/// <param name="timeInterval">The time interval between two execution.</param>
-		/// <param name="finallyReturn">Used to set the return value. It will be called after the loop.</param>
-		/// <param name="maxTotalDuration">The maximum time for the loop to run.</param>
+		/// <param name="loopCondition">The judgment condition of the loop. Returns true if you want to continue the loop; otherwise, returns false.</param>
+		/// <param name="loopToDo">The loop body. Returns false if you want to jump out of the loop; otherwise, returns true.</param>
+		/// <param name="timeInterval">The time interval between two executions.</param>
+		/// <param name="finallyReturn">The method used to set the return value, which will be called after the loop.</param>
+		/// <param name="maxTotalDuration">The maximum time for which the loop will run.</param>
 		public FrameRateTaskExecutor
 			(
 				Func<bool> loopCondition,
@@ -237,11 +236,11 @@ namespace Timothy.FrameRateTask
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		/// <param name="loopCondition">If you want to continue to loop, return true; otherwise, return false.</param>
-		/// <param name="loopToDo">Loop to do.</param>
-		/// <param name="timeInterval">The time interval between two execution.</param>
-		/// <param name="finallyReturn">Used to set the return value. It will be called after the loop.</param>
-		/// <param name="maxTotalDuration">The maximum time for the loop to run.</param>
+		/// <param name="loopCondition">The judgment condition of the loop. Returns true if you want to continue the loop; otherwise, returns false.</param>
+		/// <param name="loopToDo">The loop body.</param>
+		/// <param name="timeInterval">The time interval between two executions.</param>
+		/// <param name="finallyReturn">The method used to set the return value, which will be called after the loop.</param>
+		/// <param name="maxTotalDuration">The maximum time for which the loop will run.</param>
 		public FrameRateTaskExecutor
 			(
 				Func<bool> loopCondition,
