@@ -23,7 +23,7 @@ namespace Timothy.FrameRateTask
     public class FrameRateTaskExecutor<TResult>
     {
         /// <summary>
-        /// Gets the current actual frame rate.
+        /// Gets the real-time frame rate.
         /// </summary>
         public uint FrameRate
         {
