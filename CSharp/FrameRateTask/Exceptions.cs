@@ -29,7 +29,7 @@ namespace Timothy.FrameRateTask
     public class IllegalTimeIntervalException : ArgumentOutOfRangeException
     {
         ///
-        public override string Message => "The time interval should be a positive number and not exceed 1000ms!";
+        public override string Message => "The time interval should be a positive number!";
     }
 
     /// <summary>

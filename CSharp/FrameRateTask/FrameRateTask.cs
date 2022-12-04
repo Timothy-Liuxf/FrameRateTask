@@ -171,7 +171,7 @@ namespace Timothy.FrameRateTask
             )
         {
 
-            if (timeInterval <= 0L && timeInterval > 1000L)
+            if (timeInterval <= 0L)
             {
                 throw new IllegalTimeIntervalException();
             }
