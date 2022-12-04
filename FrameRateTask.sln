@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
+		README.zh-CN.md = README.zh-CN.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameRateTask", "CSharp\FrameRateTask\FrameRateTask.csproj", "{07261E94-73FD-43C5-AAAA-8C61E7576E47}"
@@ -19,13 +20,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{3524
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{47DC06C9-8A99-436D-B114-06EBA0FEF260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello", "Example\CSharp\Hello\Hello.csproj", "{EB55C6F7-C336-4A59-9588-11F6943E9A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hello", "Example\CSharp\Hello\Hello.csproj", "{EB55C6F7-C336-4A59-9588-11F6943E9A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakOut", "Example\CSharp\BreakOut\BreakOut.csproj", "{5EBEE786-AE2E-4417-83CF-0468BFCBDC76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakOut", "Example\CSharp\BreakOut\BreakOut.csproj", "{5EBEE786-AE2E-4417-83CF-0468BFCBDC76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congested", "Example\CSharp\Congested\Congested.csproj", "{CA4633C1-3423-4774-8575-58D1A69B9249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Congested", "Example\CSharp\Congested\Congested.csproj", "{CA4633C1-3423-4774-8575-58D1A69B9249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionRelief", "Example\CSharp\CongestionRelief\CongestionRelief.csproj", "{B548ECDD-C64F-44A1-8D3B-8708129D423C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CongestionRelief", "Example\CSharp\CongestionRelief\CongestionRelief.csproj", "{B548ECDD-C64F-44A1-8D3B-8708129D423C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemporaryCongestion", "Example\CSharp\TemporaryCongestion\TemporaryCongestion.csproj", "{C0F0BB0E-07FE-4D5B-84D6-99B390FEE480}"
 EndProject
@@ -39,9 +40,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2F814C2B-9C02-4188-AFBB-50572539ABCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConcurrency", "CSharp\Test\TestConcurrency\TestConcurrency.csproj", "{FE78004B-F053-4C75-8427-8D17115FCA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConcurrency", "CSharp\Test\TestConcurrency\TestConcurrency.csproj", "{FE78004B-F053-4C75-8427-8D17115FCA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBasic", "CSharp\Test\TestBasic\TestBasic.csproj", "{FF1EBDDC-F5B6-4304-AC05-7F325C21D10D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBasic", "CSharp\Test\TestBasic\TestBasic.csproj", "{FF1EBDDC-F5B6-4304-AC05-7F325C21D10D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
