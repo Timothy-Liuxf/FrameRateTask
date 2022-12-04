@@ -171,7 +171,7 @@ namespace Timothy.FrameRateTask
             )
         {
 
-            if (timeInterval <= 0L && timeInterval > 1000L)
+            if (timeInterval <= 0L)
             {
                 throw new IllegalTimeIntervalException();
             }
@@ -181,7 +181,7 @@ namespace Timothy.FrameRateTask
             {
                 ulong timeExceedCount = 0UL;
                 long lastLoopEndingTickCount, beginTickCount;
-
+                
                 var nextTime = (lastLoopEndingTickCount = beginTickCount = Environment.TickCount64) + timeInterval;
                 var endTime = beginTickCount < long.MaxValue - maxTotalDuration ? beginTickCount + maxTotalDuration : long.MaxValue;
 
@@ -192,11 +192,11 @@ namespace Timothy.FrameRateTask
                 {
                     if (!loopToDo()) break;
 
-                    var nowTime = Environment.TickCount64;
-                    if (nextTime >= nowTime)
+                    var currentTime = Environment.TickCount64;
+                    if (nextTime >= currentTime)
                     {
                         timeExceedCount = 0UL;
-                        Thread.Sleep((int)(nextTime - nowTime));
+                        Thread.Sleep((int)(nextTime - currentTime));
                     }
                     else
                     {
@@ -220,9 +220,11 @@ namespace Timothy.FrameRateTask
                     lastLoopEndingTickCount = nextTime;
                     nextTime += timeInterval;
                     ++loopCnt;
-                    if (Environment.TickCount64 >= nextCntTime)
+
+                    currentTime = Environment.TickCount64;
+                    if (currentTime >= nextCntTime)
                     {
-                        nextCntTime = Environment.TickCount64 + 1000L;
+                        nextCntTime = currentTime + 1000L;
                         FrameRate = loopCnt;
                         loopCnt = 0;
                     }
